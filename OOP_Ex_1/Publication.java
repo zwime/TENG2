@@ -1,3 +1,5 @@
+package OOP_Ex_1;
+
 public class Publication {
     private String author;
     private String title;
@@ -46,11 +48,5 @@ public class Publication {
     @Override
     public String toString() {
         return "Type: Publication | Author: " + author + " | Title: " + title + " | Publisher: " + publisher + " | Year: " + year;
-    }
-
-    public static void main(String[] args) {
-        Publication p = new Publication("Fritz", "what's the title", "publisher1", 2020);
-        p.setAuthor("Sepp");
-        System.out.println(p);
     }
 }
