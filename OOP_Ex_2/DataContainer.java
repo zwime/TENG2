@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DataContainer {
-    private List<Publication> data = new ArrayList<>();
+    private final List<Publication> data = new ArrayList<>();
 
     public int size() {
         return data.size();

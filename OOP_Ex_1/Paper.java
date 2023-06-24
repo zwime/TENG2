@@ -2,7 +2,7 @@ package OOP_Ex_1;
 
 public class Paper extends Publication {
     private String conference;
-    private String doi;
+    public String doi;
 
     public Paper(String author, String title, String publisher, int year, String conference, String doi) {
         super(author, title, publisher, year);

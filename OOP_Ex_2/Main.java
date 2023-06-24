@@ -11,7 +11,7 @@ public class Main {
         boolean running = true;
 
         while (running) {
-            System.out.println("Enter a command:");
+            System.out.println("\n('help' for all commands)\nEnter a command: ");
             String command = scanner.nextLine();
 
             if (command.startsWith("add")) {
@@ -27,6 +27,8 @@ public class Main {
             } else if (command.equals("size")) {
                 int size = dataContainer.size();
                 System.out.println(size + " elements are currently stored.");
+            } else if (command.equals("help")) {
+                    System.out.println("Valid commands:\nadd Publication/Paper/Article,\nsize,\nprint [id],\nprintAll,\nquit\nAll commands are CASE SENSITIVE, only use lower case!");
             } else if (command.startsWith("rm")) {
                 String[] parts = command.split(" ");
                 if (parts.length == 2) {
@@ -39,6 +41,13 @@ public class Main {
                     }
                 } else {
                     System.out.println("Invalid command. Usage: rm <id>");
+                }
+            } else if (command.equals("printAll")) {
+                if (dataContainer.size() != 0) {
+                    DataContainer.printPublications(dataContainer);
+                }
+                else {
+                    System.out.println("No Publications stored");
                 }
             } else if (command.startsWith("print")) {
                 String[] parts = command.split(" ");
@@ -54,8 +63,6 @@ public class Main {
                 } else {
                     System.out.println("Invalid command. Usage: print <id>");
                 }
-            } else if (command.equals("printAll")) {
-                DataContainer.printPublications(dataContainer);
             } else if (command.startsWith("set")) {
                 String[] parts = command.split(" ");
                 if (parts.length == 2) {
